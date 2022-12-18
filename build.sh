@@ -37,7 +37,8 @@ function build_firmware(){
 	# fix helloword build error
     rm -rf feeds/packages/lang/golang
     svn co https://github.com/openwrt/packages/branches/openwrt-22.03/lang/golang feeds/packages/lang/golang
-    git clone https://github.com/monw/luci-app-msd_lite feeds/packages
+    svn co https://github.com/coolsnowwolf/packages/branches/net/msd_lite feeds/packages/net
+    git clone https://github.com/monw/luci-app-msd_lite feeds/luci
     #install feed 
     ./scripts/feeds update -a && ./scripts/feeds install -a && make defconfig
     #build 
