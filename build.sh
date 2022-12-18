@@ -26,6 +26,8 @@ echo "Start..."
 #clone source tree 
 git clone https://github.com/gl-inet/gl-infra-builder.git $base/gl-infra-builder
 cp -r custom/  $base/gl-infra-builder/feeds/custom/
+git clone https://github.com/monw/msd_lite $base/gl-infra-builder/feeds/custom
+git clone https://github.com/monw/luci-app-msd_lite $base/gl-infra-builder/feeds/custom
 cp -r *.yml $base/gl-infra-builder/profiles
 cd $base/gl-infra-builder
 
@@ -37,11 +39,7 @@ function build_firmware(){
 	# fix helloword build error
     rm -rf feeds/packages/lang/golang
     svn co https://github.com/openwrt/packages/branches/openwrt-22.03/lang/golang feeds/packages/lang/golang
-    
-    #install feed 
-    
-    git clone https://github.com/monw/msd_lite package
-    git clone https://github.com/monw/luci-app-msd_lite package
+    #install feed    
     ./scripts/feeds update -a && ./scripts/feeds install -a 
     make defconfig
     #build 
