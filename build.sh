@@ -27,7 +27,7 @@ echo "Start..."
 git clone https://github.com/gl-inet/gl-infra-builder.git $base/gl-infra-builder
 cd custom
 git clone https://github.com/monw/msd_lite.git
-git clone https://github.com/monw/luci-app-msd_lite.git custom
+git clone https://github.com/monw/luci-app-msd_lite.git
 cd ..
 cp -r custom/  $base/gl-infra-builder/feeds/custom/
 cp -r *.yml $base/gl-infra-builder/profiles
