@@ -19,6 +19,7 @@ packages:
   - luci-app-eqos
   - wireguard-tools
   - luci-app-msd_lite
+  - msd_lite
 
 
 diffconfig: |
