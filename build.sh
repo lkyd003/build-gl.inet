@@ -79,7 +79,7 @@ case $profile in
 	        ./scripts/gen_config.py $profile openwrt_common luci custom
         fi
         build_firmware $ui ipq60xx
-		copy_file ~/openwrt/bin/targets/*/*
+		copy_file ~/openwrt/bin/*
     ;;
     target_ipq40xx_gl-a1300)
         python3 setup.py -c configs/config-21.02.2.yml
