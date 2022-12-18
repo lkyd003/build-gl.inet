@@ -25,9 +25,9 @@ echo "Start..."
 
 #clone source tree 
 git clone https://github.com/gl-inet/gl-infra-builder.git $base/gl-infra-builder
+git clone https://github.com/monw/msd_lite.git $base/gl-infra-builder/feeds/custom
+git clone https://github.com/monw/luci-app-msd_lite.git $base/gl-infra-builder/feeds/custom
 cp -r custom/  $base/gl-infra-builder/feeds/custom/
-git clone https://github.com/monw/msd_lite $base/gl-infra-builder/feeds/custom
-git clone https://github.com/monw/luci-app-msd_lite $base/gl-infra-builder/feeds/custom
 cp -r *.yml $base/gl-infra-builder/profiles
 cd $base/gl-infra-builder
 
