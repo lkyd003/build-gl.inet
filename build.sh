@@ -37,15 +37,18 @@ function build_firmware(){
 	# fix helloword build error
     rm -rf feeds/packages/lang/golang
     svn co https://github.com/openwrt/packages/branches/openwrt-22.03/lang/golang feeds/packages/lang/golang
-    svn co https://github.com/coolsnowwolf/packages/branches/net/msd_lite feeds/packages/net
-    git clone https://github.com/monw/luci-app-msd_lite feeds/luci
+    
     #install feed 
-    ./scripts/feeds update -a && ./scripts/feeds install -a && make defconfig
+    
+    git clone https://github.com/monw/msd_lite package
+    git clone https://github.com/monw/luci-app-msd_lite package
+    ./scripts/feeds update -a && ./scripts/feeds install -a 
+    make defconfig
     #build 
     if [[ $need_gl_ui == true  ]]; then 
         make -j$(expr $(nproc) + 1) GL_PKGDIR=~/glinet/$ui_path/ V=s
     else
-        make -j$(expr $(nproc) + 1)  V=s
+        make package/luci-app-msd_lite/compile V=s -j$(expr $(nproc) + 1)
     fi
 }
 
