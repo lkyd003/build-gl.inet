@@ -48,7 +48,7 @@ function build_firmware(){
     if [[ $need_gl_ui == true  ]]; then 
         make -j$(expr $(nproc) + 1) GL_PKGDIR=~/glinet/$ui_path/ V=s
     else
-        make package/luci-app-msd_lite/compile V=s -j$(expr $(nproc) + 1)
+        make custom/luci-app-msd_lite/compile V=s -j$(expr $(nproc) + 1)
     fi
 }
 
