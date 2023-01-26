@@ -86,7 +86,7 @@ case $profile in
         ln -s $base/gl-infra-builder/openwrt-21.02/openwrt-21.02.2 ~/openwrt && cd ~/openwrt
         ./scripts/gen_config.py $profile openwrt_common luci custom
         build_firmware 
-		copy_file ~/openwrt/bin/targets/*/*
+		copy_file ~/openwrt/bin/*
     ;;
 	target_mt7981_gl-mt2500)
 		python3 setup.py -c configs/config-mt798x-7.6.6.1.yml
@@ -98,7 +98,7 @@ case $profile in
             ./scripts/gen_config.py $profile custom
         fi
 		build_firmware $ui mt7981
-		copy_file ~/openwrt/bin/targets/*/*
+		copy_file ~/openwrt/bin/*
 	;;
 	target_siflower_gl-sf1200|\
 	target_siflower_gl-sft1200)
@@ -106,14 +106,14 @@ case $profile in
 		ln -s $base/gl-infra-builder/openwrt-18.06/siflower/openwrt-18.06 ~/openwrt && cd ~/openwrt
 		./scripts/gen_config.py $profile custom
 		build_firmware
-		copy_file ~/openwrt/bin/targets/*
+		copy_file ~/openwrt/bin/*
 	;;
 	target_ramips_gl-mt1300)
 		python3 setup.py -c configs/config-22.03.0.yml
 		ln -s $base/gl-infra-builder/openwrt-22.03/openwrt-22.03.0 ~/openwrt && cd ~/openwrt
 		./scripts/gen_config.py $profile luci custom
 		build_firmware
-		copy_file ~/openwrt/bin/targets/*/*
+		copy_file ~/openwrt/bin/*
 	;;
 esac
 
