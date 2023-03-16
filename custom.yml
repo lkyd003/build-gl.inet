@@ -7,7 +7,6 @@ feeds:
 packages:
   - luci-app-msd_lite
   - msd_lite
-  - luci-i18n-msd_lite-zh-cn
 
 
 diffconfig: |
@@ -15,6 +14,7 @@ diffconfig: |
   CONFIG_PACKAGE_wpad=n
   CONFIG_PACKAGE_dnsmasq=n
   CONFIG_PACKAGE_luci-i18n-ddns-zh-cn=y
+  CONFIG_PACKAGE_luci-i18n-msd_lite-zh-cn=y
   CONFIG_LUCI_LANG_zh_Hans=y
   CONFIG_BUSYBOX_CUSTOM=y
   CONFIG_BUSYBOX_CONFIG_FEATURE_FLOAT_SLEEP=y
