@@ -5,7 +5,7 @@ feeds:
     uri: https://github.com/NueXini/NueXini_Packages.git
     branch: main
   - name: openclash
-    uri: https://github.com/KKL022/OpenClash.git
+    uri: https://github.com/vernesong/OpenClash.git
     branch: master
 packages:
   - luci-theme-argon-2102
